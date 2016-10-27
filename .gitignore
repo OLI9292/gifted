@@ -1,0 +1,14 @@
+# Logs
+logs
+*.log
+
+# Env file
+.env
+
+# OS X
+.DS_Store
+
+# Webpack build files
+dist/*
+
+node_modules
