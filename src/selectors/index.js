@@ -1,6 +1,5 @@
 import { PropTypes } from 'react'
 
-
 export const selectedTable = state => state.selectedTable
 selectedTable.propType = PropTypes.string.isRequired
 

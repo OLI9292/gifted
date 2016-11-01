@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react';
 import LineChart from '../linechart/index';
 
-
 export default function Dashboard (_, { onFetchTable }) {
   let data = {
     points: [

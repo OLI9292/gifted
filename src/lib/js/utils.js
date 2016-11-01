@@ -2,7 +2,6 @@ import { assign } from 'lodash';
 import EventEmitter from 'events';
 import uuid from 'node-uuid';
 
-
 export const read = (url) => {
   return fetch(url, {
     method: 'GET',
@@ -17,4 +16,8 @@ export const read = (url) => {
   }).then(function(res) {
     return res
   })
+}
+
+export const snakeCase = (str) => {
+  return str.replace(' ', '_').toLowerCase()
 }

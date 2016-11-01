@@ -19,6 +19,7 @@ module.exports = {
     publicPath: 'static/'
   },
   plugins: [
+    new ExtractTextPlugin('[name].css'),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
@@ -40,5 +41,6 @@ module.exports = {
         include: APP_PATH
       }
     ]
-  }
+  },
+  stylus: config.stylus,
 };

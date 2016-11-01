@@ -3,9 +3,8 @@ import fetch from 'isomorphic-fetch'
 import { controller, getProps } from 'react-redux-controller'
 import * as actions from '../actions'
 import * as selectors from '../selectors'
-import { read } from '../lib/utils'
-import Table from '../components/table/index'
-
+import { read } from '../lib/js/utils'
+import MainLayout from '../components/main_layout/index'
 
 const controllerGenerators = {
   *initialize() {
@@ -19,6 +18,12 @@ const controllerGenerators = {
     const rows = data['_embedded'][table]
     dispatch(actions.updateTable(table, rows))
   },
+
+  *onSelectTable(table) {
+    const { dispatch } = yield getProps
+
+    dispatch(actions.selectTable(table))
+  },
 }
 
-export default controller(Table, controllerGenerators, selectors)
+export default controller(MainLayout, controllerGenerators, selectors)

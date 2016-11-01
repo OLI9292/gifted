@@ -3,8 +3,7 @@ import {
   UPDATE_TABLE, SELECT_TABLE
 } from '../actions'
 
-
-function selectedTable(state = 'organizations', action) {
+function selectedTable(state = '', action) {
   switch (action.type) {
   case 'SELECT_TABLE':
     return action.table
