@@ -1,18 +1,31 @@
-body, html {
-  height: 100%;
+#root, .main-layout, body, html {
   width: 100%;
+}
+
+body, html {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-#root {
-  height: 90%;
-  width: 90%;
+h1 {
+  text-align: center;
+  font-size: 56px;
+  height: 10%;
+  letter-spacing: 2px;
+  font-family: 'Questrial', sans-serif;
 }
 
-.main-layout {
-  height: 100%;
-  width: 100%;
-  border: 2px solid black;
+h4 {
+  text-align: center;
+  font-family: 'Roboto Slab', sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-bottom: 75px;
+}
+
+a {
+  color: black;
 }

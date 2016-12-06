@@ -21,3 +21,14 @@ export const read = (url) => {
 export const snakeCase = (str) => {
   return str.replace(' ', '_').toLowerCase()
 }
+
+export const route = (location) => {
+  const hashLocation = location.hash.split('#/')[1]
+  if (hashLocation.split('/')[0] == 'service') {
+    return 'service'
+  } else if (['services', 'philosophy', 'history'].includes(hashLocation)) {
+    return 'info'
+  } else {
+    return 'splash'
+  }
+}

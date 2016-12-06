@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var ROOT_PATH = path.resolve(__dirname);
 var APP_PATH = path.resolve(__dirname, 'src');
@@ -35,12 +36,15 @@ module.exports = {
         loaders: ['react-hot', 'babel'],
         include: APP_PATH
       },
+      /*{
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
+      }*/
       {
         test: /\.css/,
         loaders: ['style', 'css'],
         include: APP_PATH
       }
     ]
-  },
-  stylus: config.stylus,
+  }
 };

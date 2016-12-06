@@ -1,25 +1,23 @@
 import { combineReducers } from 'redux'
 import {
-  UPDATE_TABLE, SELECT_TABLE
+  UPDATE_TABLE, SELECT_TABLE, SELECT_SERVICE, CHANGE_MAIN
 } from '../actions'
 
-function selectedTable(state = '', action) {
+function selectedService(state = '', action) {
   switch (action.type) {
-  case 'SELECT_TABLE':
-    return action.table
+  case 'SELECT_SERVICE':
+    return action.name
   default:
     return state
   }
 }
 
-function rows(state = { items: [] }, action) {
+function changeMain(state = '', action) {
   switch (action.type) {
-    case 'UPDATE_TABLE':
-      return Object.assign({}, state, {
-        items: action.data
-      })
-    default:
-      return state
+  case 'CHANGE_MAIN':
+    return action.main
+  default:
+    return state
   }
 }
 
@@ -34,9 +32,10 @@ function tables(state = {}, action) {
   }
 }
 
-const rootReducer = combineReducers({
-  selectedTable,
+const reducers = combineReducers({
+  selectedService,
+  changeMain,
   tables
 })
 
-export default rootReducer
+export default reducers

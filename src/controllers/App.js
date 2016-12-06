@@ -3,27 +3,22 @@ import fetch from 'isomorphic-fetch'
 import { controller, getProps } from 'react-redux-controller'
 import * as actions from '../actions'
 import * as selectors from '../selectors'
-import { read } from '../lib/js/utils'
 import MainLayout from '../components/main_layout/index'
 
 const controllerGenerators = {
   *initialize() {
-    const { selectedWorld } = yield getProps
+    const { selectedService } = yield getProps
   },
 
-  *onFetchTable(table) {
-    const { dispatch } = yield getProps
+  *selectService(name) {
+    const { dispatch, selectedService } = yield getProps
 
-    const data = yield read(`${process.env.BASE_URL}${table}`).then((res) => res)
-    const rows = data['_embedded'][table]
-    dispatch(actions.updateTable(table, rows))
-  },
-
-  *onSelectTable(table) {
-    const { dispatch } = yield getProps
-
-    dispatch(actions.selectTable(table))
+    dispatch(actions.selectService(name))
   },
 }
 
-export default controller(MainLayout, controllerGenerators, selectors)
+export default controller(
+  MainLayout,
+  controllerGenerators,
+  selectors
+);

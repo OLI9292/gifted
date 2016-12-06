@@ -1,0 +1,42 @@
+.service {
+  margin: 0 auto;
+  width: 80%;
+  min-width: 400px;
+  text-align: center;
+}
+
+.service__quote {
+  background: #eee;
+  height: 100px;
+}
+
+.service__quote__text {
+  font-family: 'Roboto Slab', sans-serif;
+  width: 90%;
+  margin: 0 auto;
+  height: 40px;
+  padding-top: 20px; 
+  font-size: 16px;
+}
+
+.service__quote__by {
+  font-family: 'Roboto Slab', sans-serif;
+  font-style: italic;
+  line-height: 3s0px;
+  font-size: 14px;
+}
+
+.service__blog-posts {
+  margin: 50px 0px 50px 0px;
+  height: 75px;
+  line-height: 75px;
+  border: 1px solid black;
+  font-family: 'Questrial', sans-serif;
+  transition: background-color 0.5s ease;
+}
+
+.service__blog-posts:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
