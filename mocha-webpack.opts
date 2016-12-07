@@ -1,0 +1,4 @@
+--colors
+--silent
+--webpack-config webpack.config-test.js
+test/**/*.js

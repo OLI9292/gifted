@@ -1,24 +1,11 @@
-var path = require('path');
+var nodeExternals = require('webpack-node-externals');
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-var ROOT_PATH = path.resolve(__dirname);
-var APP_PATH = path.resolve(__dirname, 'src');
-var BUILD_PATH = path.resolve(ROOT_PATH, 'static');
-require('dotenv').config()
-
 module.exports = {
+  target: 'node',
+  externals: [nodeExternals()],
   devtool: 'eval',
-  entry: [
-    'webpack-dev-server/client?http://localhost:8080',
-    'webpack/hot/only-dev-server',
-    './src'
-  ],
-  output: {
-    path: BUILD_PATH,
-    filename: 'bundle.js',
-    publicPath: 'static/'
-  },
   plugins: [
     new ExtractTextPlugin('[name].css'),
     new webpack.HotModuleReplacementPlugin(),
@@ -33,13 +20,15 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
-        loaders: ['react-hot', 'babel'],
-        include: APP_PATH
+        loaders: ['babel-loader']
       },
       {
         test: /\.css/,
-        loaders: ['style', 'css'],
-        include: APP_PATH
+        loaders: [
+          'isomorphic-style-loader',
+          'css-loader?modules&localIdentName=[name]_[local]_[hash:base64:3]',
+          'postcss-loader'
+        ]
       }
     ]
   }

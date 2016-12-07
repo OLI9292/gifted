@@ -10,7 +10,7 @@ export const read = (url) => {
     }
   }).then(function(res) {
     if (res.status >= 400) {
-      throw new Error("Bad response from server")
+      throw new Error('Bad response from server')
     }
     return res.json()
   }).then(function(res) {

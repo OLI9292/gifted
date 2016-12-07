@@ -9,10 +9,10 @@ export default function Footer (_, {}) {
   return (
     <div className={b()}>
       <ul className={b('links')}>
-        <li><a href="#/services">Services</a></li>
-        <li><a href="#/philosophy">Philosophy</a></li>
-        <li><a href="#/history">History</a></li>
-        <li><a href="#/book">Book a Session</a></li>
+        <li><a href='#/services'>Services</a></li>
+        <li><a href='#/philosophy'>Philosophy</a></li>
+        <li><a href='#/history'>History</a></li>
+        <li><a href='#/book'>Book a Session</a></li>
       </ul>
       <div className={b('established')}>
         <p>New York, NY</p>

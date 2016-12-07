@@ -11,4 +11,8 @@ logs
 # Webpack build files
 dist/*
 
+.tmp
+
 node_modules
+
+./tmp/mocha-webpack

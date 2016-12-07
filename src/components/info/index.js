@@ -6,7 +6,6 @@ export default function Info ({page}, {}) {
 
   const b = block('info');
 
-
   return (
     <div className={b()}>
       <h1>{page.toUpperCase()}</h1>
